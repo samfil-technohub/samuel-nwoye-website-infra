@@ -13,7 +13,7 @@ pipeline {
       steps {
         checkout([$class:'GitSCM', branches: [[name: '*/release'],[name: '*/develop'],[name: '*/master']], 
         doGenerateSubmoduleConfigurations:false, extensions:[], submoduleCfg:[],
-        userRemoteConfigs:[[ credentialsId: 'knoxknot', url:'https://github.com/samfil-technohub/samuel-nwoye-website-infra.git']]])     
+        userRemoteConfigs:[[ credentialsId: 'github', url:'https://github.com/samfil-technohub/samuel-nwoye-website-infra.git']]])     
       }
     }
     stage ('Initialize') {
@@ -23,10 +23,11 @@ pipeline {
           script {
             env.TF_VAR_github_token="${github-token}"
           }
+          sh 'printenv'
           sh 'terraform --version'
           sh 'export AWS_PROFILE=knoxknot'
           sh 'terraform init'
-          sh ''
+          
         } 
       }
     }
