@@ -7,3 +7,4 @@ token
 02_inputs.auto.tfvars
 *.deb
 remotestate.tf
+terraform.tfstate
