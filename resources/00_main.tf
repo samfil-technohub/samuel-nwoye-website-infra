@@ -46,6 +46,27 @@ data "http" "caller_ip" {
   url = "http://ipv4.icanhazip.com"
 }
 
+# Get Samuel Nwoye Website Golden Image
+data "aws_ami" "server_ami" {
+  
+  filter {
+    name   = "name"
+    values = ["${var.ami_name}-*"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  most_recent = true
+  owners      = ["self"]
+  tags = {
+    Name   = "${var.ami_name}-${var.ami_tag}"
+  }
+}
+
+
 # generate a secret for github webhook
 resource "random_string" "github_webhook_secret" {
   length = 32

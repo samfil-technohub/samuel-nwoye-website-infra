@@ -1,24 +1,3 @@
-### Collect Existing Resources Data ###
-# Get Samuel Nwoye Website Golden Image
-data "aws_ami" "server_ami" {
-  
-  filter {
-    name   = "name"
-    values = ["${var.ami_name}-*"]
-  }
-
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
-
-  most_recent = true
-  owners      = ["self"]
-  tags = {
-    Name   = "${var.ami_name}-${var.ami_tag}"
-  }
-}
-
 ### Create Server Resources ###
 # Create the Server Key
 resource "aws_key_pair" "server_key" {
@@ -28,7 +7,7 @@ resource "aws_key_pair" "server_key" {
 
 # Create the Server Machine
 resource "aws_instance" "server" {
-  ami                    = "${data.aws_ami.server_ami.id}"
+  ami                    = "${var.ami}"
   instance_type          = "${var.instance_type}"
   key_name               = "${aws_key_pair.server_key.key_name}"
   vpc_security_group_ids = ["${var.vpc_security_group_ids}"]

@@ -1,10 +1,5 @@
-variable "ami_name" {
-  description = "The Name of the Golden Image"
-  type        = "string"
-}
-
-variable "ami_tag" {
-  description = "The Tag of the Golden Image"
+variable "ami" {
+  description = "The AMI for the Server"
   type        = "string"
 }
 

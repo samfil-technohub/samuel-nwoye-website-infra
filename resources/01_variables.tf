@@ -40,6 +40,12 @@ variable "instance_type" {
   type        = "string"
 }
 
+variable "no_ip" {
+  default     = "0.0.0.0/32"
+  description = "Any IP Address"
+  type        = "string"
+}
+
 variable "profile" {
   description = "The AWS Profile in Credentials Path to Use"
   type        = "string"
