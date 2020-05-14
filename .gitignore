@@ -4,6 +4,6 @@
 .vagrant
 token
 *.tfstate.*
-inputs.auto.tfvars
+02_inputs.auto.tfvars
 *.deb
 remotestate.tf
