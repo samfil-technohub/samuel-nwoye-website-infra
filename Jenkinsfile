@@ -20,9 +20,10 @@ pipeline {
       // Export AWS PROFILE and Initialize Terraform
       steps {
         withCredentials([string(credentialsId: 'github-token', variable: 'github-token')]) {
-          script {
-            env.TF_VAR_github_token=${github-token}
-          }
+          // script {
+            
+          // }
+          sh "export TF_VAR_github_token=${github-token}"
           sh 'printenv'
           sh 'terraform --version'
           sh 'export AWS_PROFILE=knoxknot'
