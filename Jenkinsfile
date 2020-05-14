@@ -13,7 +13,7 @@ pipeline {
       steps {
         checkout([$class:'GitSCM', branches: [[name: '*/release'],[name: '*/develop'],[name: '*/master']], 
         doGenerateSubmoduleConfigurations:false, extensions:[], submoduleCfg:[],
-        userRemoteConfigs:[[ url:'https://github.com/samfil-technohub/samuel-nwoye-website-infra.git']]])     
+        userRemoteConfigs:[[ credentialsId: 'github', url:'https://github.com/samfil-technohub/samuel-nwoye-website-infra.git']]])     
       }
     }
     stage ('Initialize') {
