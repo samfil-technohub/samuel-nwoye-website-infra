@@ -21,7 +21,7 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'github-token', variable: 'github-token')]) {
           script {
-            env.TF_VAR_github_token="${github-token}"
+            env.TF_VAR_github_token=${github-token}
           }
           sh 'printenv'
           sh 'terraform --version'
