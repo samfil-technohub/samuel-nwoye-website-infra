@@ -47,7 +47,7 @@ module "samuel_nwoye_website_infra" {
   github_webhook_secret = "${local.github_webhook_secret}"
   repo_name = "${var.project}-infra"
   protect_branches = []   # branch protection for private repo needs upgrade to pro
-  private_enabled = true
+  private_enabled = false
 }
 
 # The Developers Team and Assigned Resources
