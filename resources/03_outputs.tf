@@ -1,9 +1,7 @@
-
 # Samfil Nwoye Website Production Static IPs
-# output "samuel_nwoye_website_server_static_ip" {
-#   value = "${module.monitor_staging_server}"
-# }
-
+output "samuel_nwoye_website_server_static_ip" {
+  value = "${module.prod_server_static_ip.elastic_ip}"
+}
 
 # Samfil Nwoye Website Repo URLS
 output "samuel_nwoye_website_html_url" {

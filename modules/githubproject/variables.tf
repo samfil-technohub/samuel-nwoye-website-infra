@@ -7,7 +7,6 @@ variable "project_columns" {
     "Doing",
     "Done"
   ]
-  
 }
 
 variable "repo_name" {

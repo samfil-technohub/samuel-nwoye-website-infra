@@ -8,11 +8,6 @@ variable "delete_volume_on_termination_enabled" {
   type        = "string"
 }
 
-variable "monitoring_enabled" {
-  description = "Enable Monitoring i.e true or false"
-  type        = "string"
-}
-
 variable "environment" {
   description = "The Server Environment"
   type        = "string"
@@ -20,6 +15,21 @@ variable "environment" {
 
 variable "instance_type" {
   description = "AWS Instance Type"
+  type        = "string"
+}
+
+variable "monitoring_enabled" {
+  description = "Enable Monitoring i.e true or false"
+  type        = "string"
+}
+
+variable "project" {
+  description = "The Project Name"
+  type        = "string"
+}
+
+variable "public_key_path" {
+  description = "The Path to SSH Public Key"
   type        = "string"
 }
 
@@ -36,14 +46,4 @@ variable "volume_type" {
 variable "vpc_security_group_ids" {
   description = "The Security Groups to Apply"
   type        = "list"
-}
-
-variable "project" {
-  description = "The Project Name"
-  type        = "string"
-}
-
-variable "public_key_path" {
-  description = "The Path to SSH Public Key"
-  type        = "string"
 }
