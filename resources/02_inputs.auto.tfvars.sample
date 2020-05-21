@@ -1,0 +1,10 @@
+ami_name = "name of the golden image"
+ami_tag = "tag of the golden image"
+automation_server_uri = "the address of your jenkins or circleci server"
+automation_server_port = "the port number of the application"
+github_organization = "name of github organization"
+github_token = "github token"
+instance_type = "ec2 instance type" e.g t2.micro
+profile = "your aws profile"
+project = "name of your project"
+region = "aws region" # e.g eu-west-1
